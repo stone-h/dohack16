@@ -1,4 +1,4 @@
-setInterval(blink(), 100);
+
 
 function initSupervisor()
 {
@@ -24,7 +24,7 @@ function initSupervisor()
 var tick = 0;
 function blink()
 {
-    switch(tick)
+   switch(tick)
     {
         case 0:
              var xhr = new XMLHttpRequest();
@@ -41,7 +41,7 @@ function blink()
             tick=0;
             break;
     }
-    console.log("blink");
+    console.log("blink2");
 }
 
 function toggleLight(light, lightNo)
