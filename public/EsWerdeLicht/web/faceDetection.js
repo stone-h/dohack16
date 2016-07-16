@@ -3,9 +3,14 @@ function enableLightsByLocation(coords)
     var vHeight = parseInt($("#localVideo").height());
     var vWidth = parseInt($("#localVideo").width());
     var offsetTop = parseInt($("#localVideo").offset().top);
-    var offsetLeft = parseInt($("#localVideo").offset().left);
+    var offsetLeft = 0;
     var x = (coords.x/2);
     var y = (coords.y/2);
+    console.log(x);
+    console.log(y);
+    console.log(offsetLeft);
+    console.log((vWidth+offsetLeft) / 2);
+    console.log("   ");
     
     if(x <= (vWidth+offsetLeft) / 2 && y <= (vWidth+offsetLeft))
     {
