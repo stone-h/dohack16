@@ -16,8 +16,12 @@ and open the template in the editor.
     </head>
     <body onload="initSupervisor()">
         <div id="content">
-            <a href="">Supervisor</a>
-            <a href="incrementer.html">Binary-Mode</a>
+            <header>
+                <nav>
+                    <a href="" class="current">Supervisor</a> <br>
+                    <a href="incrementer.html">Binary-Mode</a>
+                </nav>
+            </header>
             <div id="lights">
                 <div id="light0" class="light">
                     <input type="range" class="lightSlider" id="lightSlider0"  max="254" min="50" onchange="dimLight($(this), 0)">

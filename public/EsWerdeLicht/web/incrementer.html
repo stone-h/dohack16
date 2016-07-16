@@ -10,14 +10,18 @@
     </head>
     <body onload="initValues()">
         <div id="content">
-            <a href="index.html">Supervisor</a>
-            <a href="">Binary-Mode</a>
+            <header>
+                <nav>
+                    <a href="index.html" >Supervisor</a> <br>
+                    <a href="" class="current">Binary-Mode</a>
+                </nav>
+            </header>
             <div id="values">
                 <h1>Value in different notations</h1>
                 <p id="binaryValue">Binary: </p>
                 <p id="decimalValue">Decimal: </p>
             </div>
-            <div>
+            <div id="buttons">
                 <input type="button" id="incButton" onClick="increment()" value="Increment the value">
             </div>
         </div>
