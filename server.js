@@ -3,6 +3,7 @@
 var restify = require('restify')
 
 let lightcontroller = require('./lightcontrol.js')
+let sensorcontroller = require('./sensorcontrol.js')
 
 // define server
 var server = restify.createServer();
@@ -15,6 +16,10 @@ var allowCrossDomain = function(req, res, next) {
     next();
 }
 server.use(allowCrossDomain)
+
+server.get(/\/public\/?.*/, restify.serveStatic({
+    directory: __dirname
+}))
 
 
 
