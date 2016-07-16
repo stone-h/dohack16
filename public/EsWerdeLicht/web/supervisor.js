@@ -19,6 +19,14 @@ function initSupervisor()
                 $("#buttonLight"+i).val("off");
                 break;
         }
+        
+        var xhr2 = new XMLHttpRequest();
+        xhr2.open("GET", "http://localhost:8081/getvalue/"+i, false);
+        xhr2.setRequestHeader("Content-Type", "application/json");
+        xhr2.send(null); 
+        var response2 = JSON.parse(xhr2.responseText);
+        console.log(response2.value);
+        $("#lightSlider"+i).val(response2.value);
     }
 }
 var tick = 0;
