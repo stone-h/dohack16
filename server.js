@@ -18,7 +18,8 @@ var allowCrossDomain = function(req, res, next) {
 server.use(allowCrossDomain)
 
 server.get(/\/public\/?.*/, restify.serveStatic({
-    directory: __dirname
+    directory: __dirname,
+    default: 'index.html'
 }))
 
 
