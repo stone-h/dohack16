@@ -6,7 +6,8 @@ let lightcontroller = require('./lightcontrol.js')
 
 // define server
 var server = restify.createServer();
-server.use(restify.bodyParser());
+server.use(restify.bodyParser())
+server.use(restify.queryParser())
 
 
 server.get('/', (req, res) => {
@@ -37,11 +38,14 @@ server.get('/setlight/on/:id', (req, res) => {
   }
 })
 
-// set light off with id
-server.get('/setlight/off/:id', (req, res) => {
+// set light value with id
+server.get('/setvalue/:id/:value', (req, res) => {
   let lightid = req.params.id
-  if(lightid < 4 && lightid >= 0){
-    lightcontroller.setLight(lightid, false)
+  let value   = req.params.value
+
+  if(lightid < 4 && lightid >= 0 && value >= 0 && value <= 254){
+    console.log("setval: " + lightid + " -> " + value)
+    lightcontroller.setValue(lightid, value)
     res.send(200)
   }else{
     res.send(404)

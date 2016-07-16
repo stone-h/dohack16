@@ -53,25 +53,26 @@ let setLight = (lightindex, lightstatus) => {
 
 // set light value
 let setValue = (lightindex, lightvalue) => {
+  console.log("in setval")
   // options for request
   let options = {
     uri: baseurl + lights[lightindex] + '/levelcontrol',
     method: 'PUT',
     timeout: 6000,
     json: {
-    "level": 50,
-    "minLevel": lightvalue,
+    "level": lightvalue,
+    "minLevel": 0,
     "maxLevel": 254
 }
   }
   // make the request and log response / error
   request(options, (error, response, body) => {
-    console.log("error: " + error)
+    console.log("got answer:: error: " + error)
     console.log("body:")
     console.log(body)
-    return body['on']
   })
 }
 
 exports.setLight = setLight
 exports.getLight = getLight
+exports.setValue = setValue
