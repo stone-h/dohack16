@@ -15,27 +15,9 @@ server.get('/', (req, res) => {
 })
 
 // set light on with id
-server.get('/getlight/:id', (req, res) => {
-  let lightid = req.params.id
-  if(lightid < 4 && lightid >= 0){
-    lightcontroller.getLight(lightid, (value) => {
-      console.log("va: " + value)
-      res.json({on: value})
-    })
-  }else{
-    res.send(404)
-  }
-})
-
-// set light on with id
 server.get('/setlight/on/:id', (req, res) => {
   let lightid = req.params.id
-  if(lightid < 4 && lightid >= 0){
-    lightcontroller.setLight(lightid, true)
-    res.send(200)
-  }else{
-    res.send(404)
-  }
+  lightcontroller.setLight(lightid, true)
 })
 
 // set light value with id

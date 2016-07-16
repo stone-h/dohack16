@@ -14,4 +14,14 @@ function toggleLight(light)
 
 }
 
+function dimLight(light)
+{
+    light = $(light);
+    console.log(light.val());
+}
+
+function test()
+{
+    $.get( "http://localhost:8081/setlight/on/0");
+}
 
