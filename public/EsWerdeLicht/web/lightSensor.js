@@ -1,38 +1,21 @@
-var lightValue = 0;
-
-var enabled = false;
-
-function switchEnabled()
-{
-    enabled = !enabled;
-    if(enabled)
-    {
-        $("#switchAutoDim").val("Disable auto-dim");
+function setLightSensorValue(){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost:8081/getsensorvalue", false);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(null); 
+    var response = JSON.parse(xhr.responseText);
+    var responseLightValue = response.value;
+    //dim Lights
+    var newLightValue = parseInt(responseLightValue/4);
+    if(newLightValue > 150)
+        newLightValue = 150;
+    for(var i = 0; i < 4; i++) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost:8081/setvalue/" + i + "/" + newLightValue, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(null);     
     }
-    else
-    {
-        $("#switchAutoDim").val("Enable auto-dim");
-    }
-}
-window.setInterval(
-    function getLightSensorValue(){
-        if(enabled && lightValue !== 30) //sample value
-        {
-        console.log("called");
-            //dim Lights
-            for(var i = 0; i < 4; i++) {
-                $.ajax({
-                    type: "GET",
-                    url: "http://localhost:8081/setvalue/"+i+"/"+250,
-                    dataType: "text"
-                }).done(function (res) {
-                    // Your `success` code
-                    console.log("success");
-                }).fail(function (jqXHR, textStatus, errorThrown) {
-                    alert("AJAX call failed: " + textStatus + ", " + errorThrown);
-                });
-            } 
-        }
-    }, 2000);
+  initSupervisor();  
+};
 
 

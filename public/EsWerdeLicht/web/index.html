@@ -12,6 +12,7 @@ and open the template in the editor.
         <link href="styles.css" type="text/css" rel="stylesheet">
         <script src="jquery.min.js"></script>
         <script src="supervisor.js"></script>
+        <script src="lightSensor.js"></script>
     </head>
     <body onload="initSupervisor()">
         <div id="content">
@@ -41,6 +42,7 @@ and open the template in the editor.
                 </span><br>
                 <input class="btn" type="button" value="1">
                 <input class="btn" type="button" value="2">
+                <input  type="button" id="autoDim" onClick="setLightSensorValue()" value="Auto dim the lights">
             </div>
             
             
