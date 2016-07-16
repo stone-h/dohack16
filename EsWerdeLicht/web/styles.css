@@ -1,5 +1,50 @@
 .light{
-    background-color: green;
+    background-color: #46d1fc;
     width: 50px;
-    height: 50px;
+    height: 250px;
+    margin-left: 10px;
+    float: left;
+    position: relative;
+}
+#lights {
+    background-color: grey;
+    width: 250px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+.lightSwitch {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+#controls {
+    margin-left: auto;
+    margin-right: auto;
+    width: 270px;
+    background-color: grey;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.btn {
+    width: 25px;
+    height: 25px;
+}
+
+#content {
+    width: 80%;
+    height: 400px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}
+
+
+
+body {
+    background-color: background;
 }
