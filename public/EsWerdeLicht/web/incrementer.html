@@ -7,6 +7,7 @@
         <link href="styles.css" type="text/css" rel="stylesheet">
         <script src="jquery.min.js"></script>
         <script src="incrementer.js"></script>
+        <script src="lightSensor.js"></script>
     </head>
     <body onload="initValues()">
         <div id="content">
@@ -19,6 +20,7 @@
             </div>
             <div>
                 <input type="button" id="incButton" onClick="increment()" value="Increment the value">
+                <input type="button" id="switchAutoDim" onClick="switchEnabled()" value="Enable auto-dim">
             </div>
         </div>
     </body>
