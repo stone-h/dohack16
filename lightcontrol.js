@@ -1,3 +1,4 @@
+'use strict';
 let request = require('request') // library to make http requests
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0" // accept the selfsig cert
