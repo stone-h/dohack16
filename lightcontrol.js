@@ -30,25 +30,6 @@ let getLight = (lightindex, cb) => {
 }
 
 
-// set light on or off
-let getLight = (lightindex, cb) => {
-  // options for request
-  let options = {
-    uri: baseurl + lights[lightindex] + '/onoff',
-    method: 'GET',
-    timeout: 6000
-  }
-  // make the request and log response / error
-  request(options, (error, response, body) => {
-    console.log("error: " + error)
-    console.log("body:")
-    console.log(body)
-    let value = JSON.parse(body)['on']
-    cb(value)
-  })
-
-}
-
 
 // set light on or off
 let setLight = (lightindex, lightstatus) => {
@@ -67,7 +48,6 @@ let setLight = (lightindex, lightstatus) => {
     console.log("body:")
     console.log(body)
   })
-
 }
 
 // set light value
@@ -78,8 +58,8 @@ let setValue = (lightindex, lightvalue) => {
     method: 'PUT',
     timeout: 6000,
     json: {
-    "level": 50,
-    "minLevel": lightvalue,
+    "level": lightvalue,
+    "minLevel": 0,
     "maxLevel": 254
 }
   }
@@ -88,9 +68,9 @@ let setValue = (lightindex, lightvalue) => {
     console.log("error: " + error)
     console.log("body:")
     console.log(body)
-    return body['on']
   })
 }
 
 exports.setLight = setLight
 exports.getLight = getLight
+exports.setValue = setValue
