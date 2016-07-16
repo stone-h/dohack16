@@ -3,7 +3,6 @@
 var restify = require('restify')
 
 let lightcontroller = require('./lightcontrol.js')
-let sensorcontroller = require('./sensorcontrol.js')
 
 // define server
 var server = restify.createServer();
