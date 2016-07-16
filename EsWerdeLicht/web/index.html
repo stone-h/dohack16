@@ -19,27 +19,27 @@ and open the template in the editor.
             <a href="incrementer.html">Binary-Mode</a>
             <div id="lights">
                 <div id="light1" class="light">
-                    <input type="range" class="lightSlider" onchange="dimLight(this)">
-                    <input class="lightSwitch" id="buttonLight1" type="button" value="on" onclick="toggleLight(this)">
+                    <input type="range" class="lightSlider" max="255" min="50" onchange="dimLight($(this), 0)">
+                    <input class="lightSwitch" id="buttonLight1" type="button" value="on" onclick="toggleLight($(this), 0)">
                 </div>
                 <div id="light2" class="light">
-                    <input type="range" class="lightSlider" onchange="dimLight(this)">
-                    <input class="lightSwitch" id="buttonLight2" type="button" value="on" onclick="toggleLight(this)">
+                    <input type="range" class="lightSlider"  max="255" min="50"  onchange="dimLight($(this), 1)">
+                    <input class="lightSwitch" id="buttonLight2" type="button" value="on" onclick="toggleLight($(this), 1)">
                 </div>
                 <div id="light3" class="light"> 
-                    <input type="range" class="lightSlider" onchange="dimLight(this)">
-                    <input class="lightSwitch" id="buttonLight3" type="button" value="on" onclick="toggleLight(this)">
+                    <input type="range" class="lightSlider"  max="255" min="50"  onchange="dimLight($(this), 2)">
+                    <input class="lightSwitch" id="buttonLight3" type="button" value="on" onclick="toggleLight($(this), 2)">
                 </div>
                 <div id="light4" class="light"> 
-                    <input type="range" class="lightSlider" onchange="dimLight(this)">
-                    <input class="lightSwitch" id="buttonLight4" type="button" value="on" onclick="toggleLight(this)">
+                    <input type="range" class="lightSlider"  max="255" min="50"  onchange="dimLight($(this), 3)">
+                    <input class="lightSwitch" id="buttonLight4" type="button" value="on" onclick="toggleLight($(this), 3)">
                 </div>
             </div>
             <div id="controls">
                 <span>
                     Light-Sensor value: <span id="lightSensorValue">250</span>
                 </span><br>
-                <input class="btn" type="button" value="1" onclick="test()">
+                <input class="btn" type="button" value="1">
                 <input class="btn" type="button" value="2">
             </div>
             

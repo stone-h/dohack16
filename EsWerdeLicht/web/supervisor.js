@@ -1,27 +1,53 @@
-function toggleLight(light)
+function toggleLight(light, lightNo)
 {
-    light = $(light);
-    console.log(light.val());
+    console.log(lightNo);
     switch(light.val())
     {
-        case "on":
-            light.val("off");
-            break;
         case "off":
-            light.val("on");
+ 
+             $.ajax({
+                type: "GET",
+                url: "http://localhost:8081/setlight/on/"+lightNo,
+                dataType: "text"
+            }).done(function (res) {
+                // Your `success` code
+                console.log("success");
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                alert("AJAX call failed: " + textStatus + ", " + errorThrown);
+            });
+                        light.val("on");
+            break;
+        case "on":
+           
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8081/setlight/off/"+lightNo,
+                dataType: "text"
+            }).done(function (res) {
+                // Your `success` code
+                console.log("success");
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                alert("AJAX call failed: " + textStatus + ", " + errorThrown);
+            });
+             light.val("off");
             break;
     }
 
 }
 
-function dimLight(light)
+function dimLight(light, lightNo)
 {
-    light = $(light);
     console.log(light.val());
-}
-
-function test()
-{
-    $.get( "http://localhost:8081/setlight/on/0");
+    
+    $.ajax({
+                type: "GET",
+                url: "http://localhost:8081/setvalue/"+lightNo+"/"+light.val(),
+                dataType: "text"
+            }).done(function (res) {
+                // Your `success` code
+                console.log("success");
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                alert("AJAX call failed: " + textStatus + ", " + errorThrown);
+            });
 }
 
