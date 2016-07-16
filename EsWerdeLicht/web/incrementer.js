@@ -7,30 +7,49 @@ function increment () {
                 
     for(var i = 0; i < 4; i++)
     {
-                    // wenn licht an stelle i false dann true setzen und break
-                    // sonst false setzen und weiter in schleife
+        if(getLightStatus(i))
+        {
+            setLightStatus(i, true);
+            break;
+        }
+        else
+        {
+            setLightStatus(i, false);
+        }
     }
     
-    test();
+    console.log(getLightStatus(0));
 }
             
 function setValues() {
-    var value = 15;
+    var valueDec;
+    var valueBin;
+    
+    for(var i = 0; i < 4; i++)
+    {
+        if(getLightStatus(i))
+        {
+            valueDec = valueDec + Math.pow(2, i);
+            valueBin = "1" + valueBin;
+        }
+    }
     //get values of the lights and set values
     $("#binaryValue").html("Binary: " + value);
     $("#decimalValue").html("Decimal: " + value);
-    $("#hexValue").html("Hexadecimal: " + value);
-}
-
-function test() {
-    $.get("http://localhost:8081/setlight/off/1");
-}
-
-function test2() {
-    $().get("http://localhost:8081/setlight/on/1");
 }
 
 function getLightStatus(id) {
-    $.get("http://localhost:8081/getLight/" + id);
+    $.get("http://localhost:8081/getlight/" + id);
+}
+
+function setLightStatus(id, on) {
+    if(on)
+    {
+        $.get("http://localhost:8081/setlight/on/" + id);
+    }
+    else
+    {
+        $.get("http://localhost:8081/setlight/off/" + id);
+    }
 }
 
