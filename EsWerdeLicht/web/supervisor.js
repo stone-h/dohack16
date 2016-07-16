@@ -22,6 +22,6 @@ function dimLight(light)
 
 function test()
 {
-    $.get( "http://localhost:8080/setlight/on/0");
+    $.get( "http://localhost:8081/setlight/on/0");
 }
 

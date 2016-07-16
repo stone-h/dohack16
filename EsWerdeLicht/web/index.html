@@ -10,7 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="styles.css" type="text/css" rel="stylesheet">
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="jquery.min.js"></script>
         <script src="supervisor.js"></script>
     </head>
     <body>
@@ -19,15 +19,19 @@ and open the template in the editor.
             <a href="incrementer.html">Binary-Mode</a>
             <div id="lights">
                 <div id="light1" class="light">
+                    <input type="range" class="lightSlider" onchange="dimLight(this)">
                     <input class="lightSwitch" id="buttonLight1" type="button" value="on" onclick="toggleLight(this)">
                 </div>
                 <div id="light2" class="light">
+                    <input type="range" class="lightSlider" onchange="dimLight(this)">
                     <input class="lightSwitch" id="buttonLight2" type="button" value="on" onclick="toggleLight(this)">
                 </div>
                 <div id="light3" class="light"> 
+                    <input type="range" class="lightSlider" onchange="dimLight(this)">
                     <input class="lightSwitch" id="buttonLight3" type="button" value="on" onclick="toggleLight(this)">
                 </div>
                 <div id="light4" class="light"> 
+                    <input type="range" class="lightSlider" onchange="dimLight(this)">
                     <input class="lightSwitch" id="buttonLight4" type="button" value="on" onclick="toggleLight(this)">
                 </div>
             </div>
@@ -35,9 +39,11 @@ and open the template in the editor.
                 <span>
                     Light-Sensor value: <span id="lightSensorValue">250</span>
                 </span><br>
-                <input class="btn" type="button" value="1">
+                <input class="btn" type="button" value="1" onclick="test()">
                 <input class="btn" type="button" value="2">
             </div>
+            
+            
         </div>
     </body>
 </html>
