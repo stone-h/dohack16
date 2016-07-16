@@ -29,6 +29,24 @@ let getLight = (lightindex, cb) => {
 
 }
 
+let getValue = (lightindex, cb) => {
+  // options for request
+  let options = {
+    uri: baseurl + lights[lightindex] + '/levelcontrol',
+    method: 'GET',
+    timeout: 6000
+  }
+  // make the request and log response / error
+  request(options, (error, response, body) => {
+    console.log("error: " + error)
+    console.log("body:")
+    console.log(body)
+    let value = JSON.parse(body)['level']
+    cb(value)
+  })
+
+}
+
 
 
 // set light on or off
@@ -74,3 +92,4 @@ let setValue = (lightindex, lightvalue) => {
 exports.setLight = setLight
 exports.getLight = getLight
 exports.setValue = setValue
+exports.getValue = getValue
