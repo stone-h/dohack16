@@ -6,9 +6,10 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Binary Incrementer</title>
+        <title>Do!Hack Es Werde Licht</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" type="text/css" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script>
             console.log(count);
@@ -32,14 +33,18 @@ and open the template in the editor.
         </script>
     </head>
     <body onload="setValues()">
-        <div id="values">
-            <h1>Value in different notations</h1>
-            <p id="binaryValue">Binary: </p>
-            <p id="decimalValue">Decimal: </p>
-            <p id="hexValue">Hexadecimal: </p>
-        </div>
-        <div>
-            <input type="button" id="incButton" onClick="increment()" value="Increment the value">
+        <div id="content">
+            <a href="index.html">Supervisor</a>
+            <a href="">Binary-Mode</a>
+            <div id="values">
+                <h1>Value in different notations</h1>
+                <p id="binaryValue">Binary: </p>
+                <p id="decimalValue">Decimal: </p>
+                <p id="hexValue">Hexadecimal: </p>
+            </div>
+            <div>
+                <input type="button" id="incButton" onClick="increment()" value="Increment the value">
+            </div>
         </div>
     </body>
 </html>
