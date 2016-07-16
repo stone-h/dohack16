@@ -43,6 +43,13 @@
     overflow: auto;
 }
 
+.lightSlider {
+    -webkit-appearance: slider-vertical;
+    width: 45px;
+    height: 220px;
+    position: absolute;
+}
+
 
 
 body {
