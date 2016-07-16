@@ -1,61 +1,51 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-   
+// value of the lights as a decimal number
 var valueDec = 0;
     
     
+// increments the lights value
 function increment () {         
+    // change the lights based on their status
     for(var i = 0; i < 4; i++)
     {
         if(getLightStatus(i))
         {
-            console.log("true");
             setLightStatus(i, false);
         }
         else
         {
-            console.log("false");
             setLightStatus(i, true);
             break;
         }
     }
+    
+    // change the value displays
     valueDec++;
     if(valueDec > 15)
     {
         valueDec = 0;
-        valueBin = "0000";
     }
-    else
-    {
-        var valueBin = valueDec.toString(2);
-    }
+    var valueBin = valueDec.toString(2);
     $("#binaryValue").html("Binary: " + valueBin);
     $("#decimalValue").html("Decimal: " + valueDec);
 }
             
+// gets the current status of the lights and changes the value displays to
+// the value
 function initValues() {
-    var valueBin = "";
     
     for(var i = 0; i < 4; i++)
     {
         if(getLightStatus(i))
         {
             valueDec = valueDec + Math.pow(2, i);
-            valueBin = "1" + valueBin;
-        }
-        else
-        {
-            valueBin = "0" + valueBin;
         }
     }
-    //get values of the lights and set values
+    var valueBin = valueDec.toString(2);
     $("#binaryValue").html("Binary: " + valueBin);
     $("#decimalValue").html("Decimal: " + valueDec);
 }
 
+// gets the status of a light with the given id
 function getLightStatus(id) {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "http://localhost:8081/getlight/"+id, false);
@@ -65,6 +55,7 @@ function getLightStatus(id) {
     return response.on;
 }
 
+// setes the status of a light with the given id to the given status
 function setLightStatus(id, on) {
     if(on)
     {
