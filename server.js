@@ -101,4 +101,4 @@ server.get('/setvalue/:id/:value', (req, res) =>{
   }
 })
 
-server.listen(8081)
+server.listen(8081, ()=> console.log("server started"))
