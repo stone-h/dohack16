@@ -1,6 +1,17 @@
 // value of the lights as a decimal number
 var valueDec = 0;
-    
+setInterval(function() {
+    checkButtonPressed();
+}, 3000);
+
+function chechButtonPressed()
+{
+     var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost:8081/getbuttonpress/0", false);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(null); 
+    console.log(xhr.responseText);
+}
     
 // increments the lights value
 function increment () {         
