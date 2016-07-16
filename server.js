@@ -3,7 +3,7 @@
 var restify = require('restify')
 
 let lightcontroller = require('./lightcontrol.js')
-
+let sensorcontroller = require('./sensorcontrol.js')
 // define server
 var server = restify.createServer();
 server.use(restify.bodyParser());
@@ -27,6 +27,16 @@ server.get(/\/public\/?.*/, restify.serveStatic({
 server.get('/', (req, res) => {
   res.send("hello api ")
 })
+
+
+server.get('/getsensorvalue', (req, res) => {
+  sensorcontroller.getSensorValue((value) => {
+    res.json({value: value})
+  })
+})
+
+
+
 
 server.get('/getlight/:id', (req, res) => {
   let lightid = req.params.id
