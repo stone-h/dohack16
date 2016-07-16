@@ -2,3 +2,5 @@
 /EsWerdeLicht/build/
 EsWerdeLicht/nbproject/ant-deploy.xml
 /node_modules
+/public/EsWerdeLicht/build/
+/public/EsWerdeLicht/nbproject/private/
