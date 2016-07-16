@@ -10,27 +10,8 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="styles.css" type="text/css" rel="stylesheet">
-        <script src="http://code.jquery.com/jquery-latest.js"></script>
-        <script>
-            console.log(count);
-            function increment () { 
-                
-                for(var i = 0; i < 4; i++)
-                {
-                    // wenn licht an stelle i false dann true setzen und break
-                    // sonst false setzen und weiter in schleife
-                }
-            }
-            
-            function setValues() {
-                var value = 15;
-                //get values of the lights and set values
-                $("#binaryValue").html("Binary: " + value);
-                $("#decimalValue").html("Decimal: " + value);
-                $("#hexValue").html("Hexadecimal: " + value);
-            }
-            
-        </script>
+        <script src="jquery.min.js"></script>
+        <script src="incrementer.js"></script>
     </head>
     <body onload="setValues()">
         <div id="content">
