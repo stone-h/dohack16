@@ -15,6 +15,14 @@
     padding: 20px;
 }
 
+#localVideo, #localCanvas {
+        margin-left: 50spx;
+    position: absolute;
+}
+
+#svg {
+
+}
 .lightSwitch {
     width: 100%;
     position: absolute;
@@ -53,5 +61,5 @@
 
 
 body {
-    background-color: #FEAAEE;
+    background-color: grey;
 }
