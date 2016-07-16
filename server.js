@@ -4,6 +4,7 @@ var restify = require('restify')
 
 let lightcontroller = require('./lightcontrol.js')
 let sensorcontroller = require('./sensorcontrol.js')
+let buttoncontroller = require('./buttoncontrol.js')
 // define server
 var server = restify.createServer();
 server.use(restify.bodyParser());
@@ -49,6 +50,18 @@ server.get('/getlight/:id', (req, res) => {
     lightcontroller.getLight(lightid, (value) => {
       console.log("va: " + value)
       res.json({on: value})
+    })
+  }else{
+    res.send(404)
+  }
+})
+
+server.get('/getbuttonpress/:id', (req, res) => {
+  let lightid = req.params.id
+  if(lightid < 3 && lightid >= 0){
+    buttoncontroller.getPressed(lightid, (value) => {
+      console.log("va: " + value)
+      res.json({pressed: value})
     })
   }else{
     res.send(404)
