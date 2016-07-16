@@ -25,4 +25,4 @@ server.get('/setlight/off/:id', (req, res) => {
   lightcontroller.setLight(lightid, false)
 })
 
-server.listen(8080)
+server.listen(8081)
