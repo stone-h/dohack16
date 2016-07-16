@@ -35,6 +35,11 @@ server.get('/getsensorvalue', (req, res) => {
   })
 })
 
+server.get('/getmotiondetected', (req, res) => {
+  sensorcontroller.getMotionDetected((value) => {
+    res.json({detected: value})
+  })
+})
 
 
 
