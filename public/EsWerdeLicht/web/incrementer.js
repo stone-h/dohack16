@@ -1,16 +1,54 @@
 // value of the lights as a decimal number
 var valueDec = 0;
+var oldValue = 0;
+var valueBin = 0;
 setInterval(function() {
     checkButtonPressed();
 }, 3000);
 
-function chechButtonPressed()
+function checkButtonPressed()
 {
-     var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
     xhr.open("GET", "http://localhost:8081/getbuttonpress/0", false);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(null); 
-    console.log(xhr.responseText);
+    var stateButton1 = (JSON.parse(xhr.responseText)).pressed;
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost:8081/getbuttonpress/1", false);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(null); 
+    var stateButton2 = (JSON.parse(xhr.responseText)).pressed;
+    
+    if(stateButton1 === "LongPressed" && stateButton2 === "LongPressed")
+    {
+        for(var i = 0; i < 4; i++)
+        {
+            setLightStatus(i, true);
+             
+        }  
+        valueDec = 15;
+        valueBin = 1111;
+        $("#binaryValue").html("Binary: " + valueBin);
+        $("#decimalValue").html("Decimal: " + valueDec);
+    }
+    else if(stateButton1 === "LongPressed")
+    {
+        increment();
+    }
+    
+    else if(stateButton2 === "LongPressed")
+    {
+        for(var i = 0; i < 4; i++)
+        {
+            setLightStatus(i, false);
+             
+        }  
+        valueDec = 0;
+        valueBin= 0;
+        $("#binaryValue").html("Binary: " + valueBin);
+        $("#decimalValue").html("Decimal: " + valueDec);
+    }
 }
     
 // increments the lights value
@@ -35,7 +73,7 @@ function increment () {
     {
         valueDec = 0;
     }
-    var valueBin = valueDec.toString(2);
+    valueBin = valueDec.toString(2);
     $("#binaryValue").html("Binary: " + valueBin);
     $("#decimalValue").html("Decimal: " + valueDec);
 }
@@ -83,4 +121,3 @@ function setLightStatus(id, on) {
         xhr.send(null); 
     }
 }
-
