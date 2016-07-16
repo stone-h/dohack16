@@ -9,8 +9,37 @@ and open the template in the editor.
         <title>Binary Incrementer</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script>
+            console.log(count);
+            function increment () { 
+                
+                for(var i = 0; i < 4; i++)
+                {
+                    // wenn licht an stelle i false dann true setzen und break
+                    // sonst false setzen und weiter in schleife
+                }
+            }
+            
+            function setValues() {
+                var value = 15;
+                //get values of the lights and set values
+                $("#binaryValue").html("Binary: " + value);
+                $("#decimalValue").html("Decimal: " + value);
+                $("#hexValue").html("Hexadecimal: " + value);
+            }
+            
+        </script>
     </head>
-    <body>
-        <div><button type="button" id="incButton">inc</button></div>
+    <body onload="setValues()">
+        <div id="values">
+            <h1>Value in different notations</h1>
+            <p id="binaryValue">Binary: </p>
+            <p id="decimalValue">Decimal: </p>
+            <p id="hexValue">Hexadecimal: </p>
+        </div>
+        <div>
+            <input type="button" id="incButton" onClick="increment()" value="Increment the value">
+        </div>
     </body>
 </html>
