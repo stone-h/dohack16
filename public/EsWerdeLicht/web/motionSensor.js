@@ -12,7 +12,7 @@ window.setInterval(function(){
     console.log(motionDetected);
     if(motionDetected)
     {
-          $('body').css('background-color', 'white');
+          $("#content").css('background-color', 'white');
         for(var i=0; i<4; i++)
         {
 
@@ -30,7 +30,7 @@ window.setInterval(function(){
     }
     else
     {
-         $('body').css('background-color', 'black');
+         $("#content").css('background-color', 'black');
         for(var i = 0; i < 4; i++)
         {
             setLightStatus(i, false);

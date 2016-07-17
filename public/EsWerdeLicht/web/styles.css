@@ -1,3 +1,28 @@
+#navigation {
+    background-color: #46d1fc;
+    padding: 20px;
+    font-size: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#navigation > a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 20px;
+}
+a.active {
+    background-color: black;
+    padding: 20px;
+}
+
+#values {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
 .light{
     background-color: #46d1fc;
     width: 50px;
@@ -15,9 +40,8 @@
     padding: 20px;
 }
 
-#colorBtn {
+.colorBtn {
     width: 250px;
-    height: 250px
 }
 
 #localVideo, #localCanvas {
@@ -54,6 +78,7 @@
     margin-left: auto;
     margin-right: auto;
     overflow: auto;
+    padding: 20px;
 }
 
 .lightSlider {
@@ -67,4 +92,5 @@
 
 body {
     background-color: grey;
+    font-family: "Arial", Georgia, Sans-Serif;
 }

@@ -2,6 +2,20 @@ setTimeout(function() {
     setModus(0);
 },1);
 
+setInterval(function() {
+    updatePage();
+}, 3000);
+
+function updatePage() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "http://localhost:8081/getsensorvalue", false);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(null); 
+    var response = JSON.parse(xhr.responseText);
+    var responseLightValue = response.value;
+    $("#lightSensorValue").text(responseLightValue);
+}
+
 function initSupervisor()
 {
     for(var i=0; i<4; i++)
