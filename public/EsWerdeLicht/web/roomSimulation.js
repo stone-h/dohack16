@@ -1,11 +1,12 @@
 setInterval(function(){checkButtonPressed();}, 3000);
 setInterval(function(){checkMotion();}, 3000);
 
-function setLight(roomId, on){
-    if(on)
-        $("#div" + roomId).css({"fill": "rgb(255, 165, 79)"});
-    else
-        $("#div" + roomId).css({"fill": "rgb(68, 68, 68"});
+function setAllLightsOff()
+{
+    for(var i = 0; i < 4; i++)
+    {
+        setLightStatus(i, false);
+    }
 }
 
 function getAllOff()
@@ -34,18 +35,18 @@ function checkButtonPressed(){
     console.log(stateButton2);
     if(stateButton1 === "LongPressed" && stateButton2 === "LongPressed")
     {
-        for(var i = 1; i < 5; i++) {
-            setLight(i+1, false);
-        }
+            lightOnFRoom(false);
+            lightOnSRoom(false);
+            lightOnTRoom(false);
     }
     else if(stateButton1 === "LongPressed")
     {
-        setLight(2, true);
+        lightOnFRoom(true);
     }
     else if(stateButton2 === "LongPressed")
     {
-        setLight(3, true);
-        setLight(4, true);
+        lightOnSRoom(true);
+        lightOnTRoom(true);
     }
 }
 
@@ -61,8 +62,8 @@ function checkMotion(){
         lightOnEntrance(true);
     else if(getAllOff())
     {
-        console.log("HUHU");
         lightOnEntrance(false);
+        setLightStatus(0, false);
     }
 }
 
@@ -71,12 +72,77 @@ function lightOnEntrance(on){
         $("#door").css({"fill": "brown"});
         $("#carpet").css({"fill": "red"});
         $("#div1").css({"fill": "rgb(255,165,79)"});
+        setLightStatus(0, true);
     }
     else
     {
         $("#door").css({"fill": "rgb(68,68,68"});
         $("#div1").css({"fill": "rgb(68,68,68)"});
         $("#carpet").css({"fill": "rgb(68,68,68)"});
+        setLightStatus(0, false);
+    }
+}
+
+function lightOnFRoom(on){
+    if(on){
+        $("#carpetFRoom1").css({"fill": "red"});
+        $("#carpetFRoom2").css({"fill": "red"});
+        $("#div2").css({"fill": "rgb(255,165,79)"});
+        setLightStatus(1, true);
+    }
+    else
+    {
+        $("#carpetFRoom1").css({"fill": "rgb(68,68,68"});
+        $("#carpetFRoom2").css({"fill": "rgb(68,68,68)"});
+        $("#div2").css({"fill": "rgb(68,68,68)"});
+        setLightStatus(1, false);
+    }
+}
+
+function lightOnSRoom(on){
+    if(on){
+        $("#carpetSRoom1").css({"fill": "red"});
+        $("#carpetSRoom2").css({"fill": "red"});
+        $("#div3").css({"fill": "rgb(255,165,79)"});
+        setLightStatus(2, true);
+    }
+    else
+    {
+        $("#carpetSRoom1").css({"fill": "rgb(68,68,68"});
+        $("#carpetSRoom2").css({"fill": "rgb(68,68,68)"});
+        $("#div3").css({"fill": "rgb(68,68,68)"});
+        setLightStatus(2, false);
+    }
+}
+
+function lightOnTRoom(on) {
+    if(on){
+        $("#carpetTRoom").css({"fill": "red"});
+        $("#div4").css({"fill": "rgb(255,165,79)"});
+        setLightStatus(3, true);
+    }
+    else
+    {
+        $("#carpetTRoom").css({"fill": "rgb(68,68,68"});
+        $("#div4").css({"fill": "rgb(68,68,68)"});
+        setLightStatus(3, false);
+    }
+}
+
+function setLightStatus(id, on) {
+    if(on)
+    {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost:8081/setlight/on/"+id, false);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(null); 
+    }
+    else
+    {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost:8081/setlight/off/"+id, false);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(null); 
     }
 }
 
