@@ -10,19 +10,22 @@
         <script src="modusManager.js"></script>
     </head>
     <body onload="initValues()">
-        <div id="content">
+        
+         <div id="navigation">
             <a href="index.html">Supervisor</a>
-            <a href="">Incrementer</a>
+            <a href="incrementer.html" class="active">Incrementer</a>
             <a href="enableLightsByVision.html">Vision-Detection</a>
-                        <a href="Sonnenbank.html">Sonnenbank</a>
+            <a href="Sonnenbank.html">Sonnenbank</a>
+            <a href="GuessTheColor.html">Guess the Color</a>
+         </div>
+        <div id="content">
             <div id="values">
                 <h1>Value in different notations</h1>
-                <p id="binaryValue">Binary: </p>
-                <p id="decimalValue">Decimal: </p>
-            </div>
-            <div id="buttons">
+                <h2 id="binaryValue">Binary: </h2>
+                <h2 id="decimalValue">Decimal: </h2>
                 <input type="button" id="incButton" onClick="increment()" value="Increment the value">
             </div>
+            <br><br><br><br><br>
             Hold left button: Increment by 1<br>
             Hold right button: set to 0<br>
         </div>

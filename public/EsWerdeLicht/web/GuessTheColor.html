@@ -16,20 +16,24 @@ and open the template in the editor.
 
     </head>
     <body onload="randomize()">
-        <div id="content">
-
+        
+         <div id="navigation">
             <a href="index.html">Supervisor</a>
             <a href="incrementer.html">Incrementer</a>
             <a href="enableLightsByVision.html">Vision-Detection</a>
             <a href="Sonnenbank.html">Sonnenbank</a>
-            <a href="">Guess the Color</a>
-            
+            <a href="GuessTheColor.html" class="active">Guess the Color</a>
+         </div>
+        <div id="content">
+            <div id="values">
+            <h1>Guess the Color</h1>
+            Inspect the lights on the panel. Try to guess the correct color.
+            <h2>Good Luck!</h2>
             <br><br>
-             Select color: <input type="color">
-            <br>
-            <input type="button" onclick="showColor()" value="show Color" id="colorBtn">
-            <input type="button" onclick="randomize()" value="new Guess" id="colorBtn">
-           
+             Select color: <input type="color" class="colorBtn">
+             <input type="button" onclick="showColor()" value="show Color"><br><br><br><br>
+            <input type="button" onclick="randomize()" value="new Guess">
+            </div>
         </div>
     </body>
 </html>

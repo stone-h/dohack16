@@ -16,14 +16,17 @@ and open the template in the editor.
         <script src="modusManager.js"></script>
     </head>
     <body onload="initSupervisor()">
+        
+        <div id="navigation">
+                <a href="" class="active">Supervisor</a>
+                <a href="incrementer.html">Incrementer</a>
+                <a href="enableLightsByVision.html">Vision-Detection</a>
+                <a href="Sonnenbank.html">Sonnenbank</a>
+                <a href="GuessTheColor.html">Guess the Color</a>
+            </div>
+        
         <div id="content">
-
-            <a href="">Supervisor</a>
-            <a href="incrementer.html">Incrementer</a>
-            <a href="enableLightsByVision.html">Vision-Detection</a>
-            <a href="Sonnenbank.html">Sonnenbank</a>
-            <a href="GuessTheColor.html">Guess the Color</a>
-
+            
             <div id="lights">
                 <div id="light0" class="light">
                     <input type="range" class="lightSlider" id="lightSlider0"  max="254" min="50" onchange="dimLight($(this), 0)">
@@ -46,8 +49,6 @@ and open the template in the editor.
                 <span>
                     Light-Sensor value: <span id="lightSensorValue">250</span>
                 </span><br>
-                <input class="btn" type="button" value="1">
-                <input class="btn" type="button" value="2">
                 <input  type="button" id="autoDim" onClick="setLightSensorValue()" value="Auto dim the lights">
             </div>
             

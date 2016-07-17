@@ -6,7 +6,7 @@ var g;
 var b;
 function randomize()
 {
-   $('body').css('background-color', 'darkgrey');
+   $('body').css('background-color', 'grey');
     r=getRandomInt(50,254);
     g=getRandomInt(50,254);
     b=getRandomInt(50,254);
