@@ -2,9 +2,13 @@
 var valueDec = 0;
 var oldValue = 0;
 var valueBin = 0;
+setTimeout(function() {
+    setModus(1);
+},1);
 setInterval(function() {
     checkButtonPressed();
 }, 3000);
+
 
 function checkButtonPressed()
 {
@@ -20,19 +24,7 @@ function checkButtonPressed()
     xhr.send(null); 
     var stateButton2 = (JSON.parse(xhr.responseText)).pressed;
     
-    if(stateButton1 === "LongPressed" && stateButton2 === "LongPressed")
-    {
-        for(var i = 0; i < 4; i++)
-        {
-            setLightStatus(i, true);
-             
-        }  
-        valueDec = 15;
-        valueBin = 1111;
-        $("#binaryValue").html("Binary: " + valueBin);
-        $("#decimalValue").html("Decimal: " + valueDec);
-    }
-    else if(stateButton1 === "LongPressed")
+   if(stateButton1 === "LongPressed")
     {
         increment();
     }

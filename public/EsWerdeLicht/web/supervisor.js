@@ -1,4 +1,6 @@
-
+setTimeout(function() {
+    setModus(0);
+},1);
 
 function initSupervisor()
 {

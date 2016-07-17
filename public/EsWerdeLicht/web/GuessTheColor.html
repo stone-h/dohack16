@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Do!Hack Es Werde Licht</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" type="text/css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+                <script src="modusManager.js"></script>
+        <script src="GuessTheColor.js"></script>
+
+    </head>
+    <body onload="randomize()">
+        <div id="content">
+
+            <a href="index.html">Supervisor</a>
+            <a href="incrementer.html">Incrementer</a>
+            <a href="enableLightsByVision.html">Vision-Detection</a>
+            <a href="Sonnenbank.html">Sonnenbank</a>
+            <a href="">Guess the Color</a>
+            
+            <br><br>
+             Select color: <input type="color">
+            <br>
+            <input type="button" onclick="showColor()" value="show Color" id="colorBtn">
+            <input type="button" onclick="randomize()" value="new Guess" id="colorBtn">
+           
+        </div>
+    </body>
+</html>

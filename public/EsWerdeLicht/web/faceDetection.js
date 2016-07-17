@@ -1,3 +1,4 @@
+
 function enableLightsByLocation(coords)
 {
     var vHeight = parseInt($("#localVideo").height());
@@ -80,6 +81,5 @@ function enableLightsByLocation(coords)
          xhr.open("GET", "http://localhost:8081/setlight/off/"+1, false);
          xhr.setRequestHeader("Content-Type", "application/json");
          xhr.send(null); 
-            
     }
 }

@@ -15,6 +15,11 @@
     padding: 20px;
 }
 
+#colorBtn {
+    width: 250px;
+    height: 250px
+}
+
 #localVideo, #localCanvas {
         margin-left: 50spx;
     position: absolute;
