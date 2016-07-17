@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Do!Hack Es Werde Licht</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery.min.js"></script>
+        <script src="roomSimulation.js"></script>
+        <link href="styles.css" type="text/css" rel="stylesheet">
+        <style>
+            html, body { height: 100%; padding: 0; margin: 0; }
+            div { width: 50%; height: 50%; float: left; }
+            #div1 { width: 50%; height: 25%; float: left;}
+            #div2 { fill: rgb(68,68,68); width: 50%;}
+            #div3 { fill: rgb(68,68,68); }
+            #div4 { fill: rgb(68,68,68); }
+            #entrance { fill: rgb(68,68,68); }
+        </style>
+    </head>
+    <body>
+        <svg width="100%" height="100%">
+        <g id="entrance">
+        <rect x="0" y="0" height="25%" width="50%" id="div1"></rect>
+        <rect x="2%" y="7.5%" height="10%" width="48%" id="carpet"></rect>
+        <rect x="0%" y="5%" height="15%" width="2%" id="door"></rect>
+        </g>
+        
+        <rect x="50%" y="0" height="50%" width="50%" id="div2"></rect>
+        <rect x="0" y="50%" height="50%" width="50%" id="div3"></rect>
+        <rect x="50%" y="50%" height="50%" width="50%" id="div4"></rect>
+        </svg>
+    </body>
+</html>
