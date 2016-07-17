@@ -13,9 +13,7 @@ and open the template in the editor.
         <script src="roomSimulation.js"></script>
         <link href="styles.css" type="text/css" rel="stylesheet">
         <style>
-            html, body { height: 100%; padding: 0; margin: 0; }
-            div { width: 50%; height: 50%; float: left; }
-            #div1 { width: 50%; height: 25%; float: left;}
+            
             #firstRoom { fill: rgb(68,68,68); width: 50%;}
             #secondRoom { fill: rgb(68,68,68); }
             #thirdRoom { fill: rgb(68,68,68); }
@@ -23,6 +21,15 @@ and open the template in the editor.
         </style>
     </head>
     <body onload="setAllLightsOff()">
+        <div id="navigation">
+            <a href="index.html">Supervisor</a>
+            <a href="incrementer.html">Incrementer</a>
+            <a href="enableLightsByVision.html">Vision-Detection</a>
+            <a href="Sonnenbank.html">Sonnenbank</a>
+            <a href="GuessTheColor.html">Guess the Color</a>
+            <a href="roomSimulation.html" class="active">Room Simulation</a>
+         </div>
+        <div id="content" style="height: 600px">
         <svg width="100%" height="100%">
         <g id="entrance">
         <rect x="0" y="0" height="35%" width="50%" id="div1"></rect>
@@ -46,5 +53,6 @@ and open the template in the editor.
         <rect x="25%" y="70%" height="10%" width="25%" id="carpetTRoom"></rect>
         </g>
         </svg>
+        </div>
     </body>
 </html>
