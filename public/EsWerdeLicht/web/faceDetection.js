@@ -16,16 +16,16 @@ function enableLightsByLocation(coords)
     {
        $("#quarterLabel").text("FIRST");
          var xhr = new XMLHttpRequest();
-         xhr.open("GET", "http://localhost:8081/setlight/off/"+0, false);
+         xhr.open("GET", "http://localhost:8081/setlight/on/"+0, false);
          xhr.setRequestHeader("Content-Type", "application/json");
          xhr.send(null); 
-                  xhr.open("GET", "http://localhost:8081/setlight/on/"+1, false);
+          xhr.open("GET", "http://localhost:8081/setlight/off/"+1, false);
          xhr.setRequestHeader("Content-Type", "application/json");
          xhr.send(null); 
-         xhr.open("GET", "http://localhost:8081/setlight/on/"+2, false);
+         xhr.open("GET", "http://localhost:8081/setlight/off/"+2, false);
          xhr.setRequestHeader("Content-Type", "application/json");
          xhr.send(null); 
-         xhr.open("GET", "http://localhost:8081/setlight/on/"+3, false);
+         xhr.open("GET", "http://localhost:8081/setlight/off/"+3, false);
          xhr.setRequestHeader("Content-Type", "application/json");
          xhr.send(null); 
     }
@@ -33,32 +33,33 @@ function enableLightsByLocation(coords)
     {
         $("#quarterLabel").text("SECOND");
          var xhr = new XMLHttpRequest();
-         xhr.open("GET", "http://localhost:8081/setlight/off/"+1, false);
-         xhr.setRequestHeader("Content-Type", "application/json");
-         xhr.send(null); 
-         xhr.open("GET", "http://localhost:8081/setlight/on/"+0, false);
-         xhr.setRequestHeader("Content-Type", "application/json");
-         xhr.send(null); 
-         xhr.open("GET", "http://localhost:8081/setlight/on/"+2, false);
-         xhr.setRequestHeader("Content-Type", "application/json");
-         xhr.send(null); 
-         xhr.open("GET", "http://localhost:8081/setlight/on/"+3, false);
-         xhr.setRequestHeader("Content-Type", "application/json");
-         xhr.send(null); 
-    }
-    if(x <= (vWidth+offsetLeft) / 2 && y > (vHeight+offsetTop) / 2) {
-        $("#quarterLabel").text("THIRD");
-         var xhr = new XMLHttpRequest();
-         xhr.open("GET", "http://localhost:8081/setlight/off/"+2, false);
-         xhr.setRequestHeader("Content-Type", "application/json");
-         xhr.send(null); 
-                  xhr.open("GET", "http://localhost:8081/setlight/on/"+0, false);
-         xhr.setRequestHeader("Content-Type", "application/json");
-         xhr.send(null); 
          xhr.open("GET", "http://localhost:8081/setlight/on/"+1, false);
          xhr.setRequestHeader("Content-Type", "application/json");
          xhr.send(null); 
-         xhr.open("GET", "http://localhost:8081/setlight/on/"+3, false);
+         xhr.open("GET", "http://localhost:8081/setlight/off/"+0, false);
+         xhr.setRequestHeader("Content-Type", "application/json");
+         xhr.send(null); 
+         xhr.open("GET", "http://localhost:8081/setlight/off/"+2, false);
+         xhr.setRequestHeader("Content-Type", "application/json");
+         xhr.send(null); 
+         xhr.open("GET", "http://localhost:8081/setlight/off/"+3, false);
+         xhr.setRequestHeader("Content-Type", "application/json");
+         xhr.send(null); 
+    }
+    if(x <= (vWidth+offsetLeft) / 2 && y > (vHeight+offsetTop) / 2) 
+    {
+        $("#quarterLabel").text("THIRD");
+         var xhr = new XMLHttpRequest();
+         xhr.open("GET", "http://localhost:8081/setlight/on/"+2, false);
+         xhr.setRequestHeader("Content-Type", "application/json");
+         xhr.send(null); 
+                  xhr.open("GET", "http://localhost:8081/setlight/off/"+0, false);
+         xhr.setRequestHeader("Content-Type", "application/json");
+         xhr.send(null); 
+         xhr.open("GET", "http://localhost:8081/setlight/off/"+1, false);
+         xhr.setRequestHeader("Content-Type", "application/json");
+         xhr.send(null); 
+         xhr.open("GET", "http://localhost:8081/setlight/off/"+3, false);
          xhr.setRequestHeader("Content-Type", "application/json");
          xhr.send(null); 
     }
@@ -67,16 +68,16 @@ function enableLightsByLocation(coords)
     {
         $("#quarterLabel").text("FOURTH");
          var xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://localhost:8081/setlight/off/"+3, false);
+            xhr.open("GET", "http://localhost:8081/setlight/on/"+3, false);
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.send(null);      
-            xhr.open("GET", "http://localhost:8081/setlight/on/"+0, false);
+            xhr.open("GET", "http://localhost:8081/setlight/off/"+0, false);
          xhr.setRequestHeader("Content-Type", "application/json");
          xhr.send(null); 
-         xhr.open("GET", "http://localhost:8081/setlight/on/"+2, false);
+         xhr.open("GET", "http://localhost:8081/setlight/off/"+2, false);
          xhr.setRequestHeader("Content-Type", "application/json");
          xhr.send(null); 
-         xhr.open("GET", "http://localhost:8081/setlight/on/"+1, false);
+         xhr.open("GET", "http://localhost:8081/setlight/off/"+1, false);
          xhr.setRequestHeader("Content-Type", "application/json");
          xhr.send(null); 
             
